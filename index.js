@@ -5,6 +5,7 @@ const fs = require("fs")
 var url = require('url')
 const scrapeIt = require("scrape-it")
 var cron = require('node-cron');
+var Config = require('./config');
 
 var log = (data, json) => fs.appendFile('./log.txt', data + JSON.stringify(json) + '\r', function (err) {
     if (err) throw err;
@@ -177,7 +178,7 @@ if( activeTask && fs.existsSync( __dirname +'/models/'+ activeTask +'.js') ) {
           res.end('Not Found');
       break;
    }
-  }).listen(3000);
-  console.log('Server running at http://localhost:3002/')
+  }).listen( Config.port );
+  console.log('Server running at http://localhost:'+Config.port+'/')
 }
 
