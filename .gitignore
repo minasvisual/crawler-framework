@@ -1,0 +1,5 @@
+/models/*.js
+!/models/.keep
+/log.txt
+/node_modules
+package-lock.json
