@@ -22,9 +22,9 @@ module.exports = {
         , attr: "src"
       }
   },
-  beforeCall: async (model) => {  // RUN BEFORE CALL URL
+  beforeCall: async (model, scrapeIt) => {  // RUN BEFORE CALL URL - params ( This model instance | ScrapeIt Instance)
     console.log('Called before '+model.task) 
-    return model;
+    return model; // model return required
   },
   success: ({ data, response }) => { // RUN AFTER EACH URL CALL SUCCESS
      console.log(`Status Code: ${response.statusCode}`)
@@ -34,7 +34,7 @@ module.exports = {
       console.log(`Error Code: ${err}`)
       console.log(err)
   },
-  afterCall: async (data) => { // RUN AFTER ALL URL CALLED -  DATA PARAMETER IS ALL DATA RESPONSE
+  afterCall: async (data) => { // RUN AFTER ALL URL CALLED - params ( DATA PARAMETER IS ALL DATA RESPONSE )
     console.log('Called after') 
   }
   // export
@@ -54,6 +54,14 @@ Run All batches
 ```
 npm index
 ```
+
+#Logs 
+log.txt is generated during cron processes
+
+#Interface - localhost:<port>
+- GET /logs: Get logs file
+- GET /tasks: Get tasks scheduled and active
+- POST /tasks?task=<modelname> : Start/Stop task
 
 Additional packages
 - lodash
