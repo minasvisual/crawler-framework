@@ -69,3 +69,4 @@ Additional packages
 - mysql2
 - request
 - sequelize
+- nodemailer
