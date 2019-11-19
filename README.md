@@ -7,7 +7,7 @@ Libs used:
 - ScrapeIt
 
 Create crawlers:
--1 Create model on model folder (see example in example folder)
+- Create model on model folder (see example in example folder)
 ```
 module.exports = {
   status: false,   //CRAWLER RUN STATUS
@@ -40,13 +40,17 @@ module.exports = {
   // export
 }
 ```
+- Test your model running 
+```
+node index <modelname>
+```
 
 Installation
 ```
 npm install
 ```
 
-Run
+Run All batches
 ```
 npm index
 ```
