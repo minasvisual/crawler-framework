@@ -1,3 +1,4 @@
-{
-   "port":3002
+module.exports = {
+   "port":3002,
+  
 }
